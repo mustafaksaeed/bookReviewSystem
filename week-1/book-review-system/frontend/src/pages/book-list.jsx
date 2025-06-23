@@ -1,6 +1,8 @@
+import "./App.css";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const bookList = () => {
+const BookList = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -55,4 +57,4 @@ const bookList = () => {
   );
 };
 
-export default bookList;
+export default BookList;
