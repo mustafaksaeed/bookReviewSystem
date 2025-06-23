@@ -3,15 +3,21 @@ import mongoose from "mongoose";
 import { Book } from "./models/Book.js"; // Adjust the path as necessary
 import { Review } from "./models/Review.js"; // Adjust the path as necessary
 import cors from "cors";
+import dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-const MONGO_URI = "mongodb://localhost:27017/letphil-lvl4";
+const MONGO_URI = process.env.URI;
+
+const clientOptions = {
+  serverApi: { version: "1", strict: true, deprecationErrors: true },
+};
 
 mongoose
-  .connect(MONGO_URI)
+  .connect(MONGO_URI, clientOptions)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error(err));
 
@@ -69,5 +75,8 @@ app.post("/reviews", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
+app.post("/signup", async (req, res) => {});
+
+app.post("/login", async (req, res) => {});
+const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
