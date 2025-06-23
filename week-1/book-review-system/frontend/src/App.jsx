@@ -6,17 +6,19 @@ function App() {
   return (
     <div
       style={{
-        display: "flex-2",
-        justifyContent: "center",
-        flexDirection: "column",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        width: "100%",
+        padding: "2rem",
       }}
     >
       <h1>Book review system</h1>
       <div>
-        <Link class="btn btn-primary" to="/signup">
+        <Link className="btn btn-primary me-2" to="/signup">
           Signup
         </Link>
-        <Link class="btn btn-primary" to="/login">
+        <Link className="btn btn-primary" to="/login">
           Login
         </Link>
       </div>
