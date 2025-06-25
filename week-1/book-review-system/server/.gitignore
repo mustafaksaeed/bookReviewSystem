@@ -27,3 +27,6 @@ coverage/
 # Build outputs
 dist/
 build/
+
+# Documentation files
+GITIGNORE_TROUBLESHOOTING.md

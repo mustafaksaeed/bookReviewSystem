@@ -1,11 +1,11 @@
 import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
 import mongoose from "mongoose";
 import { Book } from "./models/Book.js"; // Adjust the path as necessary
 import { Review } from "./models/Review.js"; // Adjust the path as necessary
 import cors from "cors";
-import dotenv from "dotenv";
 
-dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors());
